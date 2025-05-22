@@ -1,0 +1,25 @@
+Wie fühlst du dich gerade?
+Voller Energie! (1)
+Glücklich (2)
+Relaxed (3)
+Ruhig unds Traurig (4)
+Wie schnell bist du Heute?
+Voller Energie - Alles super schnell! (1)
+Total im flow! (2)
+Mal so Mal so (3)
+Ganz ruhig ohne Stress (4)
+Wo fühlst du dich am wohlsten?
+Da wo immer viel los ist! (1)
+Mit Freunden und Familie (2)
+Alleine in meinen Gedanken (3)
+An einem ruhigen und friedlichen Ort (4)
+Wie viel Energie hast du grad?
+100% (1)
+Mittelmäßig (2)
+Ein bisschen (3)
+Garkeine (4)
+Was brauchst du grad?
+Spaß und Freude (1)
+Emotionen und Tiefe (2)
+Focus und Klarheit (3)
+Freiheit (4)

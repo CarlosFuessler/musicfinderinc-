@@ -1,0 +1,3 @@
+/Users/carlos/Documents/MES/Informatik/database-project/build/_deps/freetype-subbuild/CMakeFiles/freetype-populate.dir
+/Users/carlos/Documents/MES/Informatik/database-project/build/_deps/freetype-subbuild/CMakeFiles/edit_cache.dir
+/Users/carlos/Documents/MES/Informatik/database-project/build/_deps/freetype-subbuild/CMakeFiles/rebuild_cache.dir
