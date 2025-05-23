@@ -5,6 +5,8 @@ on:
     tags:
       - 'v*'  # z. B. v1.0, v2.3.4
 
+permissions:
+  contents: write
 
 
 jobs:
