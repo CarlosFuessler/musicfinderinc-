@@ -962,7 +962,7 @@ void willkommenauswahl()
                                              Bitte wähle einen Modus!
                _____________________________________________________________________________________________
                |                                                                                           |
-               |    Login (1)      |       Benut zer Erstellen (2)       |        Lösche Userdaten (3)     |
+               |    Login (1)      |       Benutzer Erstellen (2)       |        Lösche Userdaten (3)      |
                |___________________________________________________________________________________________|     
              )"
               << std::endl;
