@@ -36,10 +36,12 @@ jobs:
 
     - name: Find built executable
       id: find_exe
+      shell: pwsh
       run: |
-        $exePath = Get-ChildItem -Recurse -Filter *.exe | Where-Object { $_.FullName -like "*\\build\\*" } | Select-Object -First 1
-        echo "Found EXE: $($exePath.FullName)"
-        echo "::set-output name=exe_path::$($exePath.FullName)"
+        $exe = Get-ChildItem -Path build/bin/Release -Filter *.exe -Recurse | Select-Object -First 1
+        if ($null -eq $exe) { throw "No .exe file found!" }
+        echo "EXE path: $($exe.FullName)"
+        echo "exe_path=$($exe.FullName)" >> $env:GITHUB_OUTPUT
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
