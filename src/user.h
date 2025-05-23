@@ -54,7 +54,7 @@ public:
             return;
         }
 
-#ifdef __WIN32__
+#if defined(WIN32)
         system("cls");
 #else
         system("clear");
@@ -65,7 +65,7 @@ public:
 
         while (question_number <= 5 && std::getline(fromfile, line))
         {
-#ifdef __WIN32__
+#if defined(WIN32)
             system("cls");
 #else
             system("clear");

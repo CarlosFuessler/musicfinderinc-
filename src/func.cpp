@@ -181,7 +181,7 @@ void clearuserdata()
 // Cleart den Bildschirm
 void clearscreen()
 {
-#ifdef __WIN32__
+#if defined(WIN32)
     system("cls");
 #else
     system("clear");
