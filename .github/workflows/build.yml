@@ -26,7 +26,7 @@ jobs:
 
     - name: Build project
       working-directory: build
-      run: make
+      run: cmake --build . --config Release
 
     - name: Find built executable
       id: find_exe
