@@ -14,13 +14,13 @@ jobs:
     - name: Set up CMake
       uses: lukka/get-cmake@v3.27.7
 
-    - name: Configure project with CMake
-      working-directory: build
-      run: cmake ..
+  #  - name: Configure project with CMake
+    #  working-directory: build
+    #  run: cmake ..
 
     - name: Build project
       working-directory: build
-      run: cmake --build . --config Release
+      run: make
 
     - name: Find built executable
       id: find_exe
