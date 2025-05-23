@@ -399,8 +399,6 @@ void sortusers(std::vector<user> &users)
         sortedUsers[j + 1] = buf;
     }
 
-    std::cout << "Fehler" << std::endl;
-
     for (int i = 0; i < sortedUsers.size(); i++)
     {
         std::cout << (i + 1) << ".   " << sortedUsers[i].username;
