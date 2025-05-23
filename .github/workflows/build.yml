@@ -14,9 +14,15 @@ jobs:
     - name: Set up CMake
       uses: lukka/get-cmake@v3.27.7
 
-  #  - name: Configure project with CMake
-    #  working-directory: build
-    #  run: cmake ..
+    - name: Remove old build directory if it exists
+      run: if (Test-Path build) { Remove-Item -Recurse -Force build }
+    
+    - name: Create fresh build directory
+      run: mkdir build
+
+    - name: Configure project with CMake
+      working-directory: build
+      run: cmake ..
 
     - name: Build project
       working-directory: build
