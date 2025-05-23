@@ -54,14 +54,22 @@ public:
             return;
         }
 
+#ifdef __WIN32__
+        system("cls");
+#else
         system("clear");
+#endif
 
         int question_number = 1;
         std::string line;
 
         while (question_number <= 5 && std::getline(fromfile, line))
         {
+#ifdef __WIN32__
+            system("cls");
+#else
             system("clear");
+#endif
             std::string question_lines[5];
             question_lines[0] = line;
             std::cout << question_lines[0] << std::endl

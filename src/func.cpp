@@ -181,7 +181,11 @@ void clearuserdata()
 // Cleart den Bildschirm
 void clearscreen()
 {
+#ifdef __WIN32__
+    system("cls");
+#else
     system("clear");
+#endif
     // std::cout << "\033[2J\033[1;1H";
 }
 
