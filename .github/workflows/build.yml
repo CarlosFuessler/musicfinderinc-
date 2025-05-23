@@ -40,8 +40,10 @@ jobs:
       run: |
         $exe = Get-ChildItem -Path build/bin/Release -Filter *.exe -Recurse | Select-Object -First 1
         if ($null -eq $exe) { throw "No .exe file found!" }
-        echo "EXE path: $($exe.FullName)"
-        echo "exe_path=$($exe.FullName)" >> $env:GITHUB_OUTPUT
+    
+        $relativePath = $exe.FullName -replace [regex]::Escape("$pwd\"), ""
+        echo "EXE relative path: $relativePath"
+        echo "exe_path=$relativePath" >> $env:GITHUB_OUTPUT
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
