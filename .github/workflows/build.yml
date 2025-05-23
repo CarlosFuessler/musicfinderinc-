@@ -1,0 +1,39 @@
+name: Build and Release (Windows)
+
+on:
+  push:
+    tags:
+      - 'v*'  # z. B. v1.0, v2.3.4
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up CMake
+      uses: lukka/get-cmake@v3.27.7
+
+    - name: Configure project with CMake
+      working-directory: build
+      run: cmake ..
+
+    - name: Build project
+      working-directory: build
+      run: cmake --build . --config Release
+
+    - name: Find built executable
+      id: find_exe
+      run: |
+        $exePath = Get-ChildItem -Recurse -Filter *.exe | Where-Object { $_.FullName -like "*\\build\\*" } | Select-Object -First 1
+        echo "Found EXE: $($exePath.FullName)"
+        echo "::set-output name=exe_path::$($exePath.FullName)"
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ${{ steps.find_exe.outputs.exe_path }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
